@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
+import SurveyData from './SurveyData';
+
 
 const Question = () => {
     const [result, setResult] = useState([
@@ -45,48 +47,46 @@ const Question = () => {
             result:'correct',
             }
     ])
-
+     
     
 
+   
+  
     return (
         <div className = "container-fluid question">
+
+       
               <div className = "heading">
               <h2>Survey</h2>
               </div>  
                 
-              <div className = "inner-div mx-auto">
+            {SurveyData.map((value)=>{
+                return(
+                    <div className = "inner-div mx-auto">
               <div><p className = "title">Question</p></div>
+              
               <div className = "que">
-                 <p className = "m-0"> Who is the best Player in the world??</p>
+                 <p className = "m-0">{value.question}</p>
               </div>
-
-              <div className = "ans">
-              <div className="row justify-content-between">
-                     <div className="col-6 one">
-                       <p> Mbappe</p>
+                    <div className = "container-fluid">
+                    <div className = "row gx-4">
+                    {value.options.map((result, index)=>{
+                        console.log(result);
+                        return <div className = "col-sm-6 "><div className = {index === 0 ? "option me-2 my-4  ": index === 2 ? "option me-2 my-4 " : "option ms-2 my-4 "}><p>{result.answer}</p></div></div>
+                    })}
                     </div>
-                    <div className="col-6 one">
-                     Neymar
-                 </div>
-              </div>
-
-              <div className="row justify-content-between my-4">
-                     <div className="col-4 one">
-                       <p> Cristiano Ronaldo</p>
                     </div>
-                    <div className="col-4 one">
-                     <p>Lionel Messi </p>
-                 </div>
-              </div>
-              </div>  
-
               <div className = "btn-div">
               <button className = "black">back</button>
-            <button>Next</button>
-            
-            <button><Link to = {{pathname:"/result", state:result}}>Finish</Link></button>
+                <button>Next</button>
+                <button className = "btn-finish"><Link  className  = "finish" to = {{pathname:"/result", state:result}}>Finish</Link></button>
         </div>
         </div>
+                )
+                console.log(value);
+            })}
+             
+      
 
        
         </div>
