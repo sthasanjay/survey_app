@@ -1,0 +1,42 @@
+  const [result, setResult] = useState([
+    {
+      question: "1",
+      result: "correct",
+    },
+    {
+      question: "2",
+      result: "incorrect",
+    },
+    {
+      question: "3",
+      result: "incorrect",
+    },
+    {
+      question: "4",
+      result: "correct",
+    },
+    {
+      question: "5",
+      result: "correct",
+    },
+    {
+      question: "6",
+      result: "correct",
+    },
+    {
+      question: "7",
+      result: "correct",
+    },
+    {
+      question: "8",
+      result: "correct",
+    },
+    {
+      question: "9",
+      result: "incorrect",
+    },
+    {
+      question: "10",
+      result: "correct",
+    },
+  ]);
