@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import SurveyData from "./SurveyData";
 import arrow from "../img/arrow.png";
 
-const Question = () => {
+const Question = (props) => {
+  console.log(props)
   const [counter, setCounter] = useState(0);
   const [data, setData] = useState([]);
+
 
   const selectOption = (questionId, answerId, correctAnswer) => {
     const dataObj = {
@@ -61,6 +63,11 @@ const Question = () => {
       return false;
     }
   };
+
+ if(props.location.state){
+  if(props.location.state.startReview ){
+    setData(props.location.state.memory);
+  }}
 
   return (
     <div className="container-fluid question">
@@ -119,7 +126,7 @@ const Question = () => {
         >
           Next
         </button>
-        <button className={`btn-finish ${counter === 9 ? "" : "hidden"}`}>
+        <button className={`btn-finish ${counter === 9 ? "" : "hidden"}  ${ checkValidation() ? "" : "disabled"}`}>
           <Link
             className="finish pe-2"
             to={{ pathname: "/result", state: data }}

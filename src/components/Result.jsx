@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Result = (props) => {
   const totalScore = () => {
@@ -27,6 +28,11 @@ const Result = (props) => {
             </p>
           );
         })}
+      </div>
+
+      <div className = "btn d-flex justify-content-center m-5 pe-3">
+        <button className = "end"><Link to = "/" className = "linkEnd">Exit</Link></button>
+        <button className = "review" ><Link to = {{pathname:"/question", state:{ memory:props.location.state, startReview:true} }} className = "linkReview">Review</Link></button>
       </div>
     </div>
   );

@@ -82,4 +82,34 @@
       width: 80%;
     }
   }
+
+  .btn{
+
+    .end{
+      background: #314C64;
+      box-shadow: 0px 4px 4px rgba(188, 0, 0, 0.5);
+      border-radius: 7px;
+      color: #690505;
+    }
+    .review{
+      background: #314C64;
+box-shadow: 0px 4px 4px rgba(0, 133, 255, 0.5);
+border-radius: 7px;
+color: #1AC8FF;
+    }
+
+    button{
+      padding: 5px 40px !important;
+      margin: 0px 18px !important;
+      border: none;
+      .linkEnd {
+        text-decoration: none;
+         color: #690505; 
+      }
+      .linkReview{
+        text-decoration: none;
+        color: #1AC8FF;
+      }
+    }
+  }
 }
