@@ -1,6 +1,13 @@
 import React from "react";
 
-const Result = () => {
+const Result = (props) => {
+  const totalScore = () => {
+    const totalCorrect = props.location.state.filter((value) => {
+      return value.result === "correct";
+    });
+    return totalCorrect.length;
+  };
+
   return (
     <div className="container-fluid result">
       <div className="heading">
@@ -8,14 +15,18 @@ const Result = () => {
       </div>
 
       <div className="title">
-        <h1>Total score : 7</h1>
+        <h1>Total score : {totalScore()}</h1>
       </div>
 
       <div className="res_value">
-        <p>
-          question: 1
-          <img src="./img/correct.png" alt="mark" />
-        </p>
+        {props.location.state.map((value) => {
+          return (
+            <p>
+              <span className="pe-3">Question: {value.questionId}</span>
+              <img src={`./img/${value.result}.png`} alt="mark" />
+            </p>
+          );
+        })}
       </div>
     </div>
   );

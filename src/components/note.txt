@@ -40,3 +40,5 @@
       result: "correct",
     },
   ]);
+
+            // to={{ pathname: "/result", state: result }}
