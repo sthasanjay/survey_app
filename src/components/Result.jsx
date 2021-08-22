@@ -30,9 +30,23 @@ const Result = (props) => {
         })}
       </div>
 
-      <div className = "btn d-flex justify-content-center m-5 pe-3">
-        <button className = "end"><Link to = "/" className = "linkEnd">Exit</Link></button>
-        <button className = "review" ><Link to = {{pathname:"/question", state:{ memory:props.location.state, startReview:true} }} className = "linkReview">Review</Link></button>
+      <div className="btn d-flex justify-content-center m-5 pe-3">
+        <button className="end">
+          <Link to="/" className="linkEnd">
+            Exit
+          </Link>
+        </button>
+        <button className="review">
+          <Link
+            to={{
+              pathname: "/review",
+              state: { memory: props.location.state, startReview: true },
+            }}
+            className="linkReview"
+          >
+            Review
+          </Link>
+        </button>
       </div>
     </div>
   );
